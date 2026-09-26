@@ -1,0 +1,141 @@
+@page {
+  size: A4;
+  margin: 12mm 14mm 13mm;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: #fff;
+  color: #191919;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.25pt;
+  line-height: 1.34;
+}
+
+body { margin: 0; }
+
+.cv {
+  width: 100%;
+  max-width: 182mm;
+  margin: 0 auto;
+}
+
+a { color: #087c8d; text-decoration: none; }
+p { margin: 0; }
+
+.cv-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4mm;
+  padding-bottom: 2.7mm;
+  border-bottom: 0.65pt solid #222;
+}
+
+.cv-header h1 {
+  margin: 0 0 0.7mm;
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: -0.5pt;
+}
+
+.cv-header p { color: #444; font-size: 9.5pt; }
+
+.cv-header address {
+  font-size: 8.4pt;
+  font-style: normal;
+  line-height: 1.45;
+  text-align: right;
+}
+
+section {
+  margin: 0 0 3.2mm;
+  break-inside: auto;
+}
+
+section > h2 {
+  margin: 0 0 1.7mm;
+  padding-bottom: 0.6mm;
+  border-bottom: 0.45pt solid #999;
+  font-size: 12.5pt;
+  font-weight: 600;
+}
+
+.subheading {
+  margin: 1.7mm 0 1.2mm;
+  font-size: 9.5pt;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 36mm;
+  gap: 4mm;
+  margin-bottom: 2mm;
+  break-inside: avoid;
+}
+
+.entry h3 {
+  margin: 0;
+  font-size: 9.6pt;
+  font-weight: 600;
+}
+
+.entry-main p + p { color: #444; font-size: 8.5pt; }
+
+.entry-meta {
+  font-size: 8.4pt;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.pub-list {
+  margin: 0;
+  padding-left: 5.2mm;
+}
+
+.pub-list li {
+  margin-bottom: 2.25mm;
+  padding-left: 0.7mm;
+  break-inside: avoid;
+  font-size: 8.55pt;
+}
+
+.pub-list .title { font-size: 9pt; font-weight: 600; }
+.pub-list strong { font-weight: 600; }
+.pub-list .accent { color: #087c8d; }
+.pub-list.compact li { margin-bottom: 1.3mm; }
+
+.dated-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dated-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38mm;
+  gap: 3mm;
+  margin-bottom: 0.9mm;
+  break-inside: avoid;
+}
+
+.dated-list time { text-align: right; }
+
+.updated {
+  margin-top: 4mm;
+  color: #777;
+  font-size: 7.5pt;
+  text-align: right;
+}
+
+@media screen {
+  body { padding: 12mm 14mm; }
+  .cv { box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); }
+}
+
+@media print {
+  .second-page { break-before: page; }
+}
