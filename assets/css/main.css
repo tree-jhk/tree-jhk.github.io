@@ -225,6 +225,12 @@ main { padding-top: 7.2rem; }
   white-space: nowrap;
 }
 
+.news-icon {
+  display: inline-block;
+  width: 1.65rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
 .education-table th { width: 190px; }
 
 .publication-list {
