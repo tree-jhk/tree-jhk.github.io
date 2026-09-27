@@ -145,6 +145,8 @@ section > h3 {
 .work-detail-list li:last-child { margin-bottom: 0; }
 .work-experience { break-inside: avoid; }
 
+.research-experience { break-inside: avoid; }
+
 .publication-list {
   margin: 0;
   padding-left: 8.1mm;
