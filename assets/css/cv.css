@@ -134,27 +134,47 @@ section > h3 {
 
 .education-entry { margin-bottom: 4.4mm; }
 
-.work-detail-list {
-  margin: 1.5mm 0 0;
-  padding-left: 8.1mm;
+.work-entry {
+  margin-bottom: 4.2mm;
+  break-inside: avoid;
+}
+
+.work-entry:last-child { margin-bottom: 0; }
+
+.work-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 6mm;
+  align-items: baseline;
+  font-size: 10.9pt;
+}
+
+.work-heading > :last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.work-description {
+  margin-top: 1.5mm;
   font-size: 9pt;
   line-height: 1.35;
 }
 
-.work-detail-list li { margin-bottom: 0.8mm; }
-.work-detail-list li:last-child { margin-bottom: 0; }
+.work-description > div { margin-bottom: 0.8mm; }
+.work-description > div:last-child { margin-bottom: 0; }
 .work-experience { break-inside: avoid; }
 
 .research-experience { break-inside: avoid; }
 
 .publication-list {
   margin: 0;
-  padding-left: 8.1mm;
+  padding-left: 0;
+  list-style: none;
 }
 
 .publication-list li {
   margin: 0 0 4.2mm;
-  padding-left: 1.2mm;
+  padding-left: 0;
   break-inside: avoid;
 }
 
@@ -163,12 +183,13 @@ section > h3 {
 
 .bullet-list {
   margin: 0;
-  padding-left: 8.1mm;
+  padding-left: 0;
+  list-style: none;
 }
 
 .bullet-list li {
   margin: 0 0 4.2mm;
-  padding-left: 1.1mm;
+  padding-left: 0;
   break-inside: avoid;
 }
 
