@@ -28,11 +28,11 @@
 
 @page {
   size: A4;
-  margin: 16mm 14mm 14mm;
+  margin: 14mm 14mm 10mm;
 }
 
 @page:first {
-  margin-top: 19mm;
+  margin-top: 14mm;
 }
 
 * { box-sizing: border-box; }
@@ -85,7 +85,7 @@ em { font-style: italic; }
 }
 
 section {
-  margin: 0 0 7.2mm;
+  margin: 0 0 3.5mm;
 }
 
 section > h2 {
@@ -150,19 +150,13 @@ section > h3 {
   text-align: right;
 }
 
-.work-description {
-  margin-top: 1.5mm;
-  font-size: 9pt;
-  line-height: 1.35;
-}
-
-.work-description > div { margin-bottom: 0.8mm; }
-.work-description > div:last-child { margin-bottom: 0; }
 .work-experience { break-inside: avoid; }
 
 .research-experience { break-inside: avoid; }
 
 .honors { break-inside: avoid; }
+
+.experiences { break-inside: avoid; }
 
 .publication-list {
   margin: 0;
@@ -207,6 +201,7 @@ section > h3 {
 
 .award-list .dated-row > div > div { margin-left: 4.1mm; }
 .compact-bullets li { margin-bottom: 0; }
+.last-update { margin: 3mm 0 0; }
 
 @media screen {
   body {
