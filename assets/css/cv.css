@@ -84,10 +84,6 @@ em { font-style: italic; }
   text-align: right;
 }
 
-.research-interests {
-  margin: 0 0 5mm;
-}
-
 section {
   margin: 0 0 7.2mm;
 }
@@ -165,6 +161,8 @@ section > h3 {
 .work-experience { break-inside: avoid; }
 
 .research-experience { break-inside: avoid; }
+
+.honors { break-inside: avoid; }
 
 .publication-list {
   margin: 0;
