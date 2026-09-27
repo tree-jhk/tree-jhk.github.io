@@ -173,8 +173,8 @@ section > h3 {
 .publication-list li:last-child { margin-bottom: 0; }
 .paper-title { font-weight: 400; }
 .publication-status { white-space: nowrap; }
-.venue-name { color: #cf202f; }
-.presentation-type { color: #d63384; }
+.venue-name { color: #c00000; }
+.presentation-type { color: #ff00ff; }
 .review-status { color: #000; }
 
 .bullet-list {
