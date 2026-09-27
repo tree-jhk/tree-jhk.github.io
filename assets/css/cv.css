@@ -62,7 +62,7 @@ strong { font-weight: 700; }
 em { font-style: italic; }
 
 .cv-header {
-  margin: 0 0 6mm;
+  margin: 0 0 3.2mm;
 }
 
 .cv-header h1 {
@@ -82,6 +82,10 @@ em { font-style: italic; }
 .header-lines address {
   font-style: normal;
   text-align: right;
+}
+
+.research-interests {
+  margin: 0 0 5mm;
 }
 
 section {
@@ -130,6 +134,17 @@ section > h3 {
 
 .education-entry { margin-bottom: 4.4mm; }
 
+.work-detail-list {
+  margin: 1.5mm 0 0;
+  padding-left: 8.1mm;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+.work-detail-list li { margin-bottom: 0.8mm; }
+.work-detail-list li:last-child { margin-bottom: 0; }
+.work-experience { break-inside: avoid; }
+
 .publication-list {
   margin: 0;
   padding-left: 8.1mm;
@@ -156,9 +171,20 @@ section > h3 {
 }
 
 .bullet-list li:last-child { margin-bottom: 0; }
-.award-list li div { margin-left: 4.1mm; }
+.dated-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 6mm;
+  align-items: baseline;
+}
+
+.dated-row > :last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.award-list .dated-row > div > div { margin-left: 4.1mm; }
 .compact-bullets li { margin-bottom: 0; }
-.reference { line-height: 1.22; }
 
 @media screen {
   body {
