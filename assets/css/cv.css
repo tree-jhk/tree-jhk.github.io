@@ -180,6 +180,7 @@ section > h3 {
 
 .publication-list li:last-child { margin-bottom: 0; }
 .paper-title { font-weight: 400; }
+.publication-status { white-space: nowrap; }
 
 .bullet-list {
   margin: 0;
