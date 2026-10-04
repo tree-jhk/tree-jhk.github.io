@@ -237,6 +237,11 @@ main { padding-top: 7.2rem; }
 
 .news-oral { color: var(--oral-accent); }
 
+.selection-rate {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
 .education-table th { width: 190px; }
 
 .publication-list {

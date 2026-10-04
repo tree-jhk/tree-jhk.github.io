@@ -176,6 +176,10 @@ section > h3 {
 .venue-name { color: #c00000; }
 .presentation-type { color: #ff00ff; }
 .review-status { color: #000; }
+.selection-rate {
+  font-size: 9pt;
+  white-space: nowrap;
+}
 
 .bullet-list {
   margin: 0;
