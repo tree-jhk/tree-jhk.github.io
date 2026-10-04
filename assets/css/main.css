@@ -242,6 +242,9 @@ main { padding-top: 7.2rem; }
   font-size: 0.85em;
 }
 
+.selection-rate strong,
+#honors strong { font-weight: 700; }
+
 .education-table th { width: 190px; }
 
 .publication-list {
