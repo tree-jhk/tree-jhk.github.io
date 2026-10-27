@@ -1,0 +1,72 @@
+{
+  "procompnav": {
+    "figure": 1,
+    "source": "https://arxiv.org/html/2605.06223v4/figures/Teaserfigure.png",
+    "full_size": [
+      2978,
+      1227
+    ],
+    "preview_size": [
+      800,
+      330
+    ],
+    "original": "procompnav-figure1.png",
+    "preview": "procompnav-figure1.webp"
+  },
+  "viro": {
+    "figure": 1,
+    "source": "https://arxiv.org/html/2601.12781v2/VIRO_main.png",
+    "full_size": [
+      1472,
+      672
+    ],
+    "preview_size": [
+      800,
+      365
+    ],
+    "original": "viro-figure1.png",
+    "preview": "viro-figure1.webp"
+  },
+  "reckg": {
+    "figure": 1,
+    "source": "https://arxiv.org/html/2501.03598v2/RecKG.png",
+    "full_size": [
+      1242,
+      403
+    ],
+    "preview_size": [
+      800,
+      260
+    ],
+    "original": "reckg-figure1.png",
+    "preview": "reckg-figure1.webp"
+  },
+  "mmtb": {
+    "figure": 1,
+    "source": "https://arxiv.org/html/2605.10966v1/mmtb-figure1-v6.png",
+    "full_size": [
+      1774,
+      740
+    ],
+    "preview_size": [
+      800,
+      334
+    ],
+    "original": "mmtb-figure1.png",
+    "preview": "mmtb-figure1.webp"
+  },
+  "segmentweave": {
+    "figure": 1,
+    "source": "Author-provided Figure 1, shared with permission",
+    "full_size": [
+      1203,
+      813
+    ],
+    "preview_size": [
+      800,
+      541
+    ],
+    "original": "segmentweave-figure1.png",
+    "preview": "segmentweave-figure1.webp"
+  }
+}

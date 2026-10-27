@@ -1,8 +1,9 @@
 {
   "nav.about": "소개",
-  "bio.background": "현재 <a href=\"https://www.postech.ac.kr/eng/\" target=\"_blank\" rel=\"noopener\">POSTECH</a> <a href=\"https://ai.postech.ac.kr/\" target=\"_blank\" rel=\"noopener\">Graduate School of Artificial Intelligence</a> 석사과정에 재학 중이며, <a href=\"https://ml.postech.ac.kr/\" target=\"_blank\" rel=\"noopener\">Machine Learning Laboratory</a>에서 Prof. <a href=\"https://sites.google.com/view/jungseulok\" target=\"_blank\" rel=\"noopener\">Jungseul Ok</a>의 지도를 받고 있습니다. 이전에는 Inha University에서 Electrical Engineering과 Artificial Intelligence를 복수전공했습니다.",
-  "bio.research": "<strong>agentic multimodal AI</strong>와 <strong>vision-language reasoning</strong>을 연구합니다. 모호한 사용자 요청을 이해하고, 시각적 환경에 대해 추론하며, 여러 단계의 작업을 신뢰성 있게 수행하는 상호작용 가능한 검증형 AI agent를 개발합니다.",
-  "bio.contact": "연구에 관심이 있으시면 <a href=\"mailto:tree.jhk@gmail.com\">tree.jhk@gmail.com</a>으로 편하게 연락해 주세요.",
+  "bio.background": "현재 <a href=\"https://www.postech.ac.kr/eng/\" target=\"_blank\" rel=\"noopener\">POSTECH</a> <a href=\"https://ai.postech.ac.kr/\" target=\"_blank\" rel=\"noopener\">Graduate School of Artificial Intelligence</a> 석사과정에 재학 중이며, <a href=\"https://ml.postech.ac.kr/\" target=\"_blank\" rel=\"noopener\">Machine Learning Laboratory</a>에서 Prof. <a href=\"https://sites.google.com/view/jungseulok\" target=\"_blank\" rel=\"noopener\">Jungseul Ok</a>의 지도를 받고 있습니다.",
+  "bio.research": "<strong>사람들의 손길이 직접 닿는 AI</strong>를 좋아합니다. 일상에서 접하는 추천 서비스부터 필요한 일을 함께 해내는 agent까지, 사람들이 직접 사용하고 상호작용하는 AI에 관심이 있습니다.",
+  "bio.journey": "Inha University에서 Electrical Engineering을 공부하다가 Applied AI가 제가 하고 싶은 일이라고 생각해 방향을 틀었고, Artificial Intelligence를 복수전공했습니다. 직접 구현하고 실험하며 아이디어를 결과로 만드는 과정이 즐겁고, 그동안의 성과도 이 선택에 확신을 더해 주었습니다.",
+  "bio.contact": "<a href=\"mailto:tree.jhk@gmail.com\">tree.jhk@gmail.com</a>으로 편하게 연락해 주세요.",
   "section.news": "소식",
   "news.procompnav": "<span class=\"news-icon\" aria-hidden=\"true\">🎉</span><a href=\"https://arxiv.org/abs/2605.06223\" target=\"_blank\" rel=\"noopener\">ProCompNav</a>가 <strong>NeurIPS 2026 <span class=\"news-oral\">Oral</span></strong>로 채택되었습니다 <span class=\"selection-rate\">(<strong>Top 0.36%</strong> - 112/30,709 submissions)</span>.",
   "news.kt": "<span class=\"news-icon\" aria-hidden=\"true\">🤖</span><a href=\"https://corp.kt.com/eng/html/intro/main.html\" target=\"_blank\" rel=\"noopener\">KT Corp</a>에서 AI 연구 인턴을 마쳤습니다.",

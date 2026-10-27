@@ -22,6 +22,7 @@ class Document(HTMLParser):
         self.base = base
         self.links = []
         self.assets = []
+        self.images = []
         self.ids = []
         self.current_language = []
         self.lang = None
@@ -42,6 +43,8 @@ class Document(HTMLParser):
                 self.current_language.append(attrs["lang"])
         if tag in {"img", "script"} and attrs.get("src"):
             self.assets.append(urljoin(self.base, attrs["src"]))
+        if tag == "img":
+            self.images.append(attrs)
         if tag == "link" and attrs.get("rel") in {"stylesheet", "icon"}:
             self.assets.append(urljoin(self.base, attrs["href"]))
 
@@ -84,6 +87,31 @@ class LocaleTests(unittest.TestCase):
     def test_anchor_ids_are_preserved_and_unique(self):
         self.assertEqual(self.en_doc.ids, self.ko_doc.ids)
         self.assertEqual(len(self.ko_doc.ids), len(set(self.ko_doc.ids)))
+
+    def test_all_five_papers_have_original_figures_and_previews(self):
+        manifest = json.loads((ROOT / "assets/img/papers/sources.json").read_text(encoding="utf-8"))
+        self.assertEqual(set(manifest), {"procompnav", "viro", "reckg", "mmtb", "segmentweave"})
+        for document in [self.en_doc, self.ko_doc]:
+            images = [image for image in document.images if "/papers/" in image["src"]]
+            self.assertEqual(len(images), 5)
+            for image in images:
+                name = Path(image["src"]).name.split("-figure1")[0]
+                self.assertEqual([int(image["width"]), int(image["height"])], manifest[name]["preview_size"])
+                self.assertEqual(image["loading"], "lazy")
+                self.assertTrue(image["alt"].strip())
+                self.assertLessEqual(max(manifest[name]["preview_size"]), 800)
+                original = ROOT / "assets/img/papers" / manifest[name]["original"]
+                self.assertTrue(original.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"))
+                self.assertIn(BUILDER.SITE + "assets/img/papers/" + original.name, document.links)
+
+    def test_bio_expresses_personal_choice_without_private_plans(self):
+        self.assertIn("AI that people can actually use and interact with", self.en)
+        self.assertIn("chose to move into Applied AI", self.en)
+        self.assertIn("사람들의 손길이 직접 닿는 AI", self.ko)
+        self.assertIn("확신", self.translations["bio.journey"])
+        for key in ["bio.background", "bio.research", "bio.journey", "bio.contact"]:
+            self.assertNotRegex(self.translations[key], r"사업|창업|연봉|박사 진학")
+        self.assertNotRegex(self.en, r"(?i)entrepreneur|business of my own|running a business")
 
     def test_paper_titles_authors_and_venues_stay_in_english(self):
         for css_class in ["paper-title", "authors", "venue"]:

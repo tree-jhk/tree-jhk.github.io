@@ -68,8 +68,8 @@ def build():
     result = localizer.render()
     replacements = {
         '<html lang="en">': '<html lang="ko">',
-        '<meta name="description" content="Junhyuk Kwon is an AI researcher working on agentic multimodal AI and vision-language reasoning.">': '<meta name="description" content="agentic multimodal AI와 vision-language reasoning을 연구하는 Junhyuk Kwon의 홈페이지입니다.">',
-        '<meta property="og:description" content="AI researcher working on agentic multimodal AI and vision-language reasoning.">': '<meta property="og:description" content="agentic multimodal AI와 vision-language reasoning을 연구하는 Junhyuk Kwon의 홈페이지입니다.">',
+        '<meta name="description" content="Junhyuk Kwon works on AI that people can use and interact with, from recommender systems to multimodal agents.">': '<meta name="description" content="사람들의 손길이 직접 닿는 AI를 좋아하는 Junhyuk Kwon의 홈페이지입니다. Recommender systems와 multimodal agents를 다룹니다.">',
+        '<meta property="og:description" content="AI that people can use and interact with, from recommender systems to multimodal agents.">': '<meta property="og:description" content="사람들이 직접 사용하고 상호작용하는 AI에 관심이 있습니다. Recommender systems부터 multimodal agents까지 다룹니다.">',
         f'<meta property="og:url" content="{SITE}">': f'<meta property="og:url" content="{SITE}ko/">',
         '<meta property="og:locale" content="en_US">': '<meta property="og:locale" content="ko_KR">',
         '<meta property="og:locale:alternate" content="ko_KR">': '<meta property="og:locale:alternate" content="en_US">',

@@ -26,6 +26,23 @@ Commit the generated `ko/index.html` along with the source changes. The generato
 checks for missing/unused translations and preserves shared publication details,
 links, dates, assets, and layout. Unmarked English content is reused verbatim.
 
+## Paper figures
+
+Each paper has a lazy-loaded WebP preview of Figure 1; clicking it opens the
+full-resolution PNG. Images are original paper figures, not generated artwork.
+Sources and image dimensions are recorded in `assets/img/papers/sources.json`.
+
+To refresh the four public arXiv figures (requires Pillow):
+
+```bash
+python3 scripts/prepare-paper-figures.py
+```
+
+SegmentWeave Figure 1 was exported with the author's permission. Its manuscript
+is not published here. To re-export from an author-provided local PDF (also
+requires PyMuPDF), use `--segmentweave-pdf /path/to/manuscript.pdf` after checking
+that the figure still occupies the documented page and crop region.
+
 ## Rebuild the CV
 
 Run the following from PowerShell:
