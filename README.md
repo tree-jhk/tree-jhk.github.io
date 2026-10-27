@@ -17,7 +17,7 @@ Open `index.html` directly or serve the directory with any static HTTP server.
 
 Edit `index.html` for English content and `assets/i18n/ko.json` for Korean text.
 The separate Beyond page uses `beyond/index.html` and `assets/i18n/beyond.ko.json`.
-Its five decorative 3D icons are generated assets in `assets/img/beyond/`, with
+Its decorative 3D icons are generated assets in `assets/img/beyond/`, with
 transparent full-resolution PNG sources, lightweight WebP display versions, and
 the generation prompt set in `prompts.json`.
 Elements marked with `data-i18n` are translated when generating the Korean page:

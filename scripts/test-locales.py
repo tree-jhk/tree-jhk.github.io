@@ -172,12 +172,14 @@ class BeyondTests(unittest.TestCase):
                     self.assertTrue((ROOT / asset.removeprefix(BUILDER.SITE)).is_file(), asset)
             self.assertIn(BUILDER.SITE + "assets/pdf/CV.pdf", document.links)
 
-    def test_five_concise_items_and_original_joke(self):
+    def test_four_concise_items(self):
         entries = [re.sub(r'<[^>]+>', '', text) for text in re.findall(r'<dd[^>]*>(.*?)</dd>', self.en, re.DOTALL)]
-        self.assertEqual(len(entries), 5)
-        self.assertLess(sum(len(text.split()) for text in entries), 135)
+        self.assertEqual(len(entries), 4)
+        self.assertLess(sum(len(text.split()) for text in entries), 110)
         self.assertTrue(all(len(text.split()) < 40 for text in entries))
-        self.assertIn("Turns out I could use some of that training myself.", self.en)
+        self.assertNotIn('data-i18n="questions.', self.en)
+        self.assertNotIn('data-i18n="questions.', self.ko)
+        self.assertNotIn("questions.title", self.translations)
         for name in ["USD", "QLD", "KATUSA", "United States Army"]:
             self.assertIn(name, self.en)
             self.assertIn(name, self.ko)
@@ -192,11 +194,11 @@ class BeyondTests(unittest.TestCase):
         self.assertIn("큰 방향", self.translations["everyday.text"])
         self.assertIn("매 거래일", self.translations["investing.text"])
 
-    def test_five_shared_decorative_icons(self):
-        names = ["everyday-ai", "investing", "asking-questions", "military-service", "running"]
+    def test_four_shared_decorative_icons(self):
+        names = ["everyday-ai", "investing", "military-service", "running"]
         for document in [self.en_doc, self.ko_doc]:
             icons = [image for image in document.images if image.get("class") == "beyond-icon"]
-            self.assertEqual(len(icons), 5)
+            self.assertEqual(len(icons), 4)
             self.assertEqual([Path(image["src"]).stem for image in icons], names)
             for image in icons:
                 self.assertEqual(image["alt"], "")
@@ -205,6 +207,12 @@ class BeyondTests(unittest.TestCase):
                 self.assertEqual(image["height"], "44")
                 self.assertEqual(image["loading"], "lazy")
         self.assertEqual(self.en_doc.assets, self.ko_doc.assets)
+
+    def test_military_heading_and_cultural_experience(self):
+        self.assertIn("Serving with the U.S. Army", self.en)
+        self.assertIn("미군과 함께한 군 복무", self.ko)
+        military = re.search(r'<dd data-i18n="military.text">(.*?)</dd>', self.en, re.DOTALL).group(1)
+        self.assertLess(military.index("American culture"), military.index("interpreting"))
 
     def test_main_navigation_links_to_matching_beyond_page(self):
         for path, expected in [("index.html", "beyond/"), ("ko/index.html", "ko/beyond/")]:
