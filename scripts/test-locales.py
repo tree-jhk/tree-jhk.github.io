@@ -25,6 +25,7 @@ class Document(HTMLParser):
         self.images = []
         self.ids = []
         self.current_language = []
+        self.nav_routes = []
         self.lang = None
         self.canonical = None
         self.feed(source)
@@ -39,6 +40,8 @@ class Document(HTMLParser):
             self.canonical = attrs["href"]
         if tag == "a":
             self.links.append(urljoin(self.base, attrs["href"]))
+            if attrs.get("data-nav"):
+                self.nav_routes.append((attrs["data-nav"], urljoin(self.base, attrs["href"])))
             if "language-option" in attrs.get("class", "") and attrs.get("aria-current") == "page":
                 self.current_language.append(attrs["lang"])
         if tag in {"img", "script"} and attrs.get("src"):
@@ -73,9 +76,9 @@ class LocaleTests(unittest.TestCase):
             self.assertEqual(document.canonical, BUILDER.SITE + path)
 
     def test_links_are_preserved(self):
-        # The ordering of POSTECH and its graduate school changes naturally in Korean.
-        en = Counter(link for link in self.en_doc.links if "#" not in link)
-        ko = Counter(link for link in self.ko_doc.links if "#" not in link)
+        # Internal navigation is localized; publications and shared assets are not.
+        en = Counter(link.replace(BUILDER.SITE + "ko/", BUILDER.SITE) for link in self.en_doc.links if "#" not in link)
+        ko = Counter(link.replace(BUILDER.SITE + "ko/", BUILDER.SITE) for link in self.ko_doc.links if "#" not in link)
         self.assertEqual(en, ko)
 
     def test_assets_are_shared(self):
@@ -110,6 +113,15 @@ class LocaleTests(unittest.TestCase):
         self.assertIn("사람들의 손길이 직접 닿는 AI", self.ko)
         self.assertIn("확신", self.translations["bio.journey"])
 
+    def test_school_details_stay_in_education_not_bio(self):
+        for source in [self.en, self.ko]:
+            bio = re.search(r'<div class="bio">(.*?)</div>', source, re.DOTALL).group(1)
+            self.assertNotRegex(bio, r"POSTECH|Inha|Graduate School|M\.S\.")
+            education = re.search(r'<section id="education".*?</section>', source, re.DOTALL).group(0)
+            self.assertIn("POSTECH", education)
+            self.assertIn("Inha University", education)
+        self.assertIn("real user behavior", self.en)
+
     def test_paper_titles_authors_and_venues_stay_in_english(self):
         for css_class in ["paper-title", "authors", "venue"]:
             pattern = rf'<div class="{css_class}"[^>]*>(.*?)</div>'
@@ -128,6 +140,53 @@ class LocaleTests(unittest.TestCase):
     def test_unused_translation_fails(self):
         with self.assertRaisesRegex(ValueError, "Unused Korean translations"):
             BUILDER.Localizer("<p>English</p>", {"unused": "한국어"}).render()
+
+
+class BeyondTests(unittest.TestCase):
+    def setUp(self):
+        self.en = (ROOT / "beyond/index.html").read_text(encoding="utf-8")
+        self.ko = (ROOT / "ko/beyond/index.html").read_text(encoding="utf-8")
+        self.translations = json.loads((ROOT / "assets/i18n/beyond.ko.json").read_text(encoding="utf-8"))
+        self.en_doc = Document(self.en, BUILDER.SITE + "beyond/")
+        self.ko_doc = Document(self.ko, BUILDER.SITE + "ko/beyond/")
+
+    def test_translation_coverage_and_reproducibility(self):
+        BUILDER.Localizer(self.en, self.translations).render()
+        BUILDER.build()
+        self.assertEqual(self.ko, (ROOT / "ko/beyond/index.html").read_text(encoding="utf-8"))
+
+    def test_language_and_page_local_switch_links(self):
+        for document, language, path in [(self.en_doc, "en", "beyond/"), (self.ko_doc, "ko", "ko/beyond/")]:
+            self.assertEqual(document.lang, language)
+            self.assertEqual(document.current_language, [language])
+            self.assertEqual(document.canonical, BUILDER.SITE + path)
+            self.assertIn(BUILDER.SITE + "beyond/", document.links)
+            self.assertIn(BUILDER.SITE + "ko/beyond/", document.links)
+
+    def test_navigation_and_assets_remain_in_correct_locale(self):
+        for document, prefix in [(self.en_doc, ""), (self.ko_doc, "ko/")]:
+            for name, link in document.nav_routes:
+                self.assertEqual(link, BUILDER.SITE + prefix + ("beyond/" if name == "beyond" else ""))
+            for asset in document.assets:
+                if asset.startswith(BUILDER.SITE):
+                    self.assertTrue((ROOT / asset.removeprefix(BUILDER.SITE)).is_file(), asset)
+            self.assertIn(BUILDER.SITE + "assets/pdf/CV.pdf", document.links)
+
+    def test_four_concise_items_and_original_joke(self):
+        entries = re.findall(r'<dd[^>]*>(.*?)</dd>', self.en, re.DOTALL)
+        self.assertEqual(len(entries), 4)
+        self.assertLess(sum(len(text.split()) for text in entries), 100)
+        self.assertTrue(all(len(text.split()) < 32 for text in entries))
+        self.assertIn("Turns out I could use some of that training myself.", self.en)
+        for name in ["USD", "QLD", "KATUSA", "U.S. Army"]:
+            self.assertIn(name, self.en)
+            self.assertIn(name, self.ko)
+
+    def test_main_navigation_links_to_matching_beyond_page(self):
+        for path, expected in [("index.html", "beyond/"), ("ko/index.html", "ko/beyond/")]:
+            source = (ROOT / path).read_text(encoding="utf-8")
+            document = Document(source, BUILDER.SITE + ("ko/" if path.startswith("ko/") else ""))
+            self.assertIn(("beyond", BUILDER.SITE + expected), document.nav_routes)
 
 
 if __name__ == "__main__":
