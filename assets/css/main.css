@@ -189,13 +189,28 @@ main { padding-top: 7.2rem; }
 
 .beyond-item {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 200px minmax(0, 1fr);
   gap: 1.5rem;
   padding: 1.35rem 0;
   border-top: 1px solid var(--line);
 }
 
-.beyond-item dt { font-weight: 500; }
+.beyond-item dt {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 500;
+}
+
+.beyond-icon {
+  display: block;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.beyond-item dt span { min-width: 0; }
 .beyond-item dd { margin: 0; overflow-wrap: anywhere; }
 html:lang(ko) .beyond-item dd { word-break: keep-all; }
 

@@ -192,6 +192,20 @@ class BeyondTests(unittest.TestCase):
         self.assertIn("큰 방향", self.translations["everyday.text"])
         self.assertIn("매 거래일", self.translations["investing.text"])
 
+    def test_five_shared_decorative_icons(self):
+        names = ["everyday-ai", "investing", "asking-questions", "military-service", "running"]
+        for document in [self.en_doc, self.ko_doc]:
+            icons = [image for image in document.images if image.get("class") == "beyond-icon"]
+            self.assertEqual(len(icons), 5)
+            self.assertEqual([Path(image["src"]).stem for image in icons], names)
+            for image in icons:
+                self.assertEqual(image["alt"], "")
+                self.assertEqual(image["aria-hidden"], "true")
+                self.assertEqual(image["width"], "44")
+                self.assertEqual(image["height"], "44")
+                self.assertEqual(image["loading"], "lazy")
+        self.assertEqual(self.en_doc.assets, self.ko_doc.assets)
+
     def test_main_navigation_links_to_matching_beyond_page(self):
         for path, expected in [("index.html", "beyond/"), ("ko/index.html", "ko/beyond/")]:
             source = (ROOT / path).read_text(encoding="utf-8")

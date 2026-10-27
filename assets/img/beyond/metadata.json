@@ -1,0 +1,87 @@
+{
+  "everyday-ai": {
+    "source": "everyday-ai.png",
+    "display": "everyday-ai.webp",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "display_size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "clear_margin_px": 21
+  },
+  "investing": {
+    "source": "investing.png",
+    "display": "investing.webp",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "display_size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "clear_margin_px": 16
+  },
+  "asking-questions": {
+    "source": "asking-questions.png",
+    "display": "asking-questions.webp",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "display_size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "clear_margin_px": 25
+  },
+  "military-service": {
+    "source": "military-service.png",
+    "display": "military-service.webp",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "display_size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "clear_margin_px": 17
+  },
+  "running": {
+    "source": "running.png",
+    "display": "running.webp",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "display_size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "clear_margin_px": 21
+  }
+}
