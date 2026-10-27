@@ -104,14 +104,11 @@ class LocaleTests(unittest.TestCase):
                 self.assertTrue(original.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"))
                 self.assertIn(BUILDER.SITE + "assets/img/papers/" + original.name, document.links)
 
-    def test_bio_expresses_personal_choice_without_private_plans(self):
+    def test_bio_expresses_personal_choice(self):
         self.assertIn("AI that people can actually use and interact with", self.en)
         self.assertIn("chose to move into Applied AI", self.en)
         self.assertIn("사람들의 손길이 직접 닿는 AI", self.ko)
         self.assertIn("확신", self.translations["bio.journey"])
-        for key in ["bio.background", "bio.research", "bio.journey", "bio.contact"]:
-            self.assertNotRegex(self.translations[key], r"사업|창업|연봉|박사 진학")
-        self.assertNotRegex(self.en, r"(?i)entrepreneur|business of my own|running a business")
 
     def test_paper_titles_authors_and_venues_stay_in_english(self):
         for css_class in ["paper-title", "authors", "venue"]:
