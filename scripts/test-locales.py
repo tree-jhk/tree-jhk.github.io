@@ -208,11 +208,15 @@ class BeyondTests(unittest.TestCase):
                 self.assertEqual(image["loading"], "lazy")
         self.assertEqual(self.en_doc.assets, self.ko_doc.assets)
 
-    def test_military_heading_and_cultural_experience(self):
+    def test_military_heading_and_professional_experience(self):
         self.assertIn("Serving with the U.S. Army", self.en)
         self.assertIn("미군과 함께한 군 복무", self.ko)
         military = re.search(r'<dd data-i18n="military.text">(.*?)</dd>', self.en, re.DOTALL).group(1)
-        self.assertLess(military.index("American culture"), military.index("interpreting"))
+        self.assertIn("American workplace culture", military)
+        self.assertIn("cross-cultural collaboration", military)
+        self.assertIn('title="Korean Augmentation to the United States Army"', military)
+        self.assertNotRegex(military, r"interpreting|transportation operations")
+        self.assertIn("미국식 업무 문화와 협업 방식", self.translations["military.text"])
 
     def test_main_navigation_links_to_matching_beyond_page(self):
         for path, expected in [("index.html", "beyond/"), ("ko/index.html", "ko/beyond/")]:
