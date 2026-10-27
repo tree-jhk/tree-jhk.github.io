@@ -2,3 +2,4 @@
 Thumbs.db
 *.log
 preview/
+__pycache__/

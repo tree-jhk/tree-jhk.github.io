@@ -11,7 +11,13 @@
     <meta property="og:description" content="AI researcher working on agentic multimodal AI and vision-language reasoning.">
     <meta property="og:image" content="https://tree-jhk.github.io/assets/img/junhyuk_kwon.jpg">
     <meta property="og:url" content="https://tree-jhk.github.io/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
     <title>Junhyuk Kwon</title>
+    <link rel="canonical" href="https://tree-jhk.github.io/">
+    <link rel="alternate" hreflang="en" href="https://tree-jhk.github.io/">
+    <link rel="alternate" hreflang="ko" href="https://tree-jhk.github.io/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://tree-jhk.github.io/">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,8 +49,12 @@
       <nav class="nav container" aria-label="Main navigation">
         <a class="brand" href="#about" aria-label="Junhyuk Kwon home"><strong>Junhyuk</strong> Kwon</a>
         <div class="nav-links">
-          <a class="active" href="#about">About</a>
+          <a class="active" href="#about" data-i18n="nav.about">About</a>
           <a href="assets/pdf/CV.pdf" target="_blank" rel="noopener">CV</a>
+          <div class="language-switch" role="group" aria-label="Language">
+            <a class="language-option" href="/" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
+            <a class="language-option" href="/ko/" lang="ko" hreflang="ko" aria-label="한국어">KR</a>
+          </div>
           <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A7 7 0 0 1 13.36 3.1C12.92 3.04 12.46 3 12 3Z"/></svg>
           </button>
@@ -74,7 +84,7 @@
 
         <div class="bio">
           <h1><strong>Junhyuk</strong> Kwon</h1>
-          <p>
+          <p data-i18n="bio.background">
             I am an M.S. student at the
             <a href="https://ai.postech.ac.kr/" target="_blank" rel="noopener">Graduate School of Artificial Intelligence</a>,
             <a href="https://www.postech.ac.kr/eng/" target="_blank" rel="noopener">POSTECH</a>, where I am a member of the
@@ -82,12 +92,12 @@
             advised by Prof. <a href="https://sites.google.com/view/jungseulok" target="_blank" rel="noopener">Jungseul Ok</a>.
             Previously, I received B.S. degrees in Electrical Engineering and Artificial Intelligence from Inha University.
           </p>
-          <p>
+          <p data-i18n="bio.research">
             My research interests lie in <strong>agentic multimodal AI</strong> and <strong>vision-language reasoning</strong>.
             I build interactive and verifiable AI agents that understand ambiguous human requests, reason over visual environments,
             and reliably execute multi-step tasks.
           </p>
-          <p>
+          <p data-i18n="bio.contact">
             If you are interested in my research, please feel free to contact me at
             <a href="mailto:tree.jhk@gmail.com">tree.jhk@gmail.com</a>.
           </p>
@@ -95,25 +105,25 @@
       </section>
 
       <section id="news" class="content-section">
-        <h2>News</h2>
+        <h2 data-i18n="section.news">News</h2>
         <div class="table-wrap">
           <table class="timeline-table">
             <tbody>
               <tr>
                 <th><time datetime="2026-09-24">Sep 24, 2026</time></th>
-                <td><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2605.06223" target="_blank" rel="noopener">ProCompNav</a> is accepted to <strong>NeurIPS 2026 as an <span class="news-oral">Oral</span> presentation</strong> <span class="selection-rate">(<strong>Top 0.36%</strong> - 112/30,709 submissions)</span>.</td>
+                <td data-i18n="news.procompnav"><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2605.06223" target="_blank" rel="noopener">ProCompNav</a> is accepted to <strong>NeurIPS 2026 as an <span class="news-oral">Oral</span> presentation</strong> <span class="selection-rate">(<strong>Top 0.36%</strong> - 112/30,709 submissions)</span>.</td>
               </tr>
               <tr>
                 <th><time datetime="2026-08">Aug, 2026</time></th>
-                <td><span class="news-icon" aria-hidden="true">🤖</span>Completed an AI Research Internship at <a href="https://corp.kt.com/eng/html/intro/main.html" target="_blank" rel="noopener">KT Corp</a>.</td>
+                <td data-i18n="news.kt"><span class="news-icon" aria-hidden="true">🤖</span>Completed an AI Research Internship at <a href="https://corp.kt.com/eng/html/intro/main.html" target="_blank" rel="noopener">KT Corp</a>.</td>
               </tr>
               <tr>
                 <th><time datetime="2026-06">Jun, 2026</time></th>
-                <td><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2601.12781" target="_blank" rel="noopener">VIRO</a> is accepted to <strong>CVPR 2026</strong>.</td>
+                <td data-i18n="news.viro"><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2601.12781" target="_blank" rel="noopener">VIRO</a> is accepted to <strong>CVPR 2026</strong>.</td>
               </tr>
               <tr>
                 <th><time datetime="2024-04-10">Apr 10, 2024</time></th>
-                <td><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2501.03598" target="_blank" rel="noopener">RecKG</a> is accepted to <strong>ACM SAC 2024 as an <span class="news-oral">Oral</span> presentation</strong>.</td>
+                <td data-i18n="news.reckg"><span class="news-icon" aria-hidden="true">🎉</span><a href="https://arxiv.org/abs/2501.03598" target="_blank" rel="noopener">RecKG</a> is accepted to <strong>ACM SAC 2024 as an <span class="news-oral">Oral</span> presentation</strong>.</td>
               </tr>
             </tbody>
           </table>
@@ -121,13 +131,13 @@
       </section>
 
       <section id="education" class="content-section">
-        <h2>Education</h2>
+        <h2 data-i18n="section.education">Education</h2>
         <div class="table-wrap">
           <table class="timeline-table education-table">
             <tbody>
               <tr>
                 <th>Mar, 2025 – Feb, 2027</th>
-                <td>
+                <td data-i18n="education.postech">
                   <a href="https://www.postech.ac.kr/eng/" target="_blank" rel="noopener">Pohang University of Science and Technology (POSTECH)</a>, Pohang, South Korea<br>
                   M.S. in Graduate School of Artificial Intelligence<br>
                   Advisor: Prof. <a href="https://sites.google.com/view/jungseulok" target="_blank" rel="noopener">Jungseul Ok</a>
@@ -135,7 +145,7 @@
               </tr>
               <tr>
                 <th>Mar, 2018 – Feb, 2025</th>
-                <td>
+                <td data-i18n="education.inha">
                   <a href="https://www.inha.ac.kr/eng/" target="_blank" rel="noopener">Inha University</a>, Incheon, South Korea<br>
                   B.S. in Electrical Engineering and Artificial Intelligence (Double Major)<br>
                   Undergraduate Research Advisor: Prof. Young-Duk Seo (<a href="https://sites.google.com/view/kdd-lab" target="_blank" rel="noopener">KDD Lab</a>)
@@ -147,7 +157,7 @@
       </section>
 
       <section id="publications" class="content-section publications">
-        <h2>Publications</h2>
+        <h2 data-i18n="section.publications">Publications</h2>
 
         <ol class="publication-list">
           <li>
@@ -156,8 +166,8 @@
             <div class="venue"><em>Neural Information Processing Systems (NeurIPS)</em>, 2026 <span class="highlight">Oral</span> <span class="selection-rate">(<strong>Top 0.36%</strong> - 112/30,709 submissions)</span></div>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2605.06223" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://github.com/tree-jhk/procompnav" target="_blank" rel="noopener">Code</a>
-              <a href="https://tree-jhk.github.io/procompnav/" target="_blank" rel="noopener">Project Page</a>
+              <a href="https://github.com/tree-jhk/procompnav" target="_blank" rel="noopener" data-i18n="link.code">Code</a>
+              <a href="https://tree-jhk.github.io/procompnav/" target="_blank" rel="noopener" data-i18n="link.project">Project Page</a>
             </div>
           </li>
           <li>
@@ -166,7 +176,7 @@
             <div class="venue"><em>Computer Vision and Pattern Recognition (CVPR)</em>, 2026</div>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2601.12781" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification" target="_blank" rel="noopener" data-i18n="link.code">Code</a>
             </div>
           </li>
           <li>
@@ -175,79 +185,79 @@
             <div class="venue"><em>ACM/SIGAPP Symposium on Applied Computing (SAC)</em>, 2024 <span class="highlight">Oral</span></div>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2501.03598" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://github.com/tree-jhk/RecKG" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/tree-jhk/RecKG" target="_blank" rel="noopener" data-i18n="link.code">Code</a>
             </div>
           </li>
         </ol>
       </section>
 
       <section id="preprint" class="content-section publications">
-        <h2>Preprint</h2>
+        <h2 data-i18n="section.preprint">Preprint</h2>
         <ol class="publication-list">
           <li>
             <div class="paper-title">MMTB: Evaluating Terminal Agents on Multimedia-File Tasks</div>
             <div class="authors">Chiyeong Heo, Jaechang Kim, <strong>Junhyuk Kwon</strong>, Hoyoung Kim, Dongmin Park, Jonghyun Lee, and Jungseul Ok</div>
-            <div class="venue"><em>Under review 2026</em></div>
+            <div class="venue" data-i18n="paper.underReview"><em>Under review 2026</em></div>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2605.10966" target="_blank" rel="noopener">arXiv</a>
             </div>
           </li>
           <li>
             <div class="paper-title">SegmentWeave: Post-Processing Framework for Enhanced Dense Video Captioning</div>
-            <div class="authors"><strong>Junhyuk Kwon</strong> (second author), et al.</div>
-            <div class="venue"><em>Under review 2026</em></div>
+            <div class="authors" data-i18n="paper.segmentweaveAuthors"><strong>Junhyuk Kwon</strong> (second author), et al.</div>
+            <div class="venue" data-i18n="paper.underReview"><em>Under review 2026</em></div>
           </li>
         </ol>
       </section>
 
       <section id="honors" class="content-section">
-        <h2>Honors</h2>
+        <h2 data-i18n="section.honors">Honors</h2>
         <div class="table-wrap">
           <table class="timeline-table">
             <tbody>
-              <tr><th>2024</th><td>Grand Prize (<strong>2nd of 12</strong>), Inha AI Challenge — LLM-based Question Answering</td></tr>
-              <tr><th>2024</th><td>Undergraduate Paper Award, Korea Computer Congress (<strong>Top 12.8%</strong>)</td></tr>
-              <tr><th>2023</th><td>Excellence Award (<strong>2nd of 28</strong>), Hyundai Motor Group CTO AI Competition</td></tr>
+              <tr><th>2024</th><td data-i18n="honors.inha">Grand Prize (<strong>2nd of 12</strong>), Inha AI Challenge — LLM-based Question Answering</td></tr>
+              <tr><th>2024</th><td data-i18n="honors.kcc">Undergraduate Paper Award, Korea Computer Congress (<strong>Top 12.8%</strong>)</td></tr>
+              <tr><th>2023</th><td data-i18n="honors.hyundai">Excellence Award (<strong>2nd of 28</strong>), Hyundai Motor Group CTO AI Competition</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section id="experience" class="content-section">
-        <h2>Experience</h2>
+        <h2 data-i18n="section.experience">Experience</h2>
         <div class="experience-group">
-          <h3>Research &amp; Industry</h3>
+          <h3 data-i18n="experience.research">Research &amp; Industry</h3>
           <div class="table-wrap">
             <table class="timeline-table experience-table">
               <tbody>
                 <tr>
                   <th>Jul – Aug, 2026</th>
-                  <td><strong>AI Research Intern, <a href="https://corp.kt.com/eng/html/intro/main.html" target="_blank" rel="noopener">KT Corp</a></strong><br>One of Korea’s largest telecom and AI companies, serving 30%+ of the country’s mobile users.</td>
+                  <td data-i18n="experience.kt"><strong>AI Research Intern, <a href="https://corp.kt.com/eng/html/intro/main.html" target="_blank" rel="noopener">KT Corp</a></strong><br>One of Korea’s largest telecom and AI companies, serving 30%+ of the country’s mobile users.</td>
                 </tr>
                 <tr>
                   <th>Mar, 2023 – Feb, 2025</th>
-                  <td><strong>Undergraduate Researcher, Inha University KDD Lab</strong><br>Knowledge Graphs, Recommender Systems, and LLMs</td>
+                  <td data-i18n="experience.inha"><strong>Undergraduate Researcher, Inha University KDD Lab</strong><br>Knowledge Graphs, Recommender Systems, and LLMs</td>
                 </tr>
                 <tr>
                   <th>Jul – Sep, 2024</th>
-                  <td><strong>AI Research Intern, Growdle</strong></td>
+                  <td data-i18n="experience.growdle"><strong>AI Research Intern, Growdle</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
         <div class="experience-group">
-          <h3>Additional</h3>
+          <h3 data-i18n="experience.additional">Additional</h3>
           <div class="table-wrap">
             <table class="timeline-table experience-table">
               <tbody>
                 <tr>
                   <th>Sep, 2022 – Feb, 2023</th>
-                  <td><strong>NAVER Boostcamp AI Tech, Recommender Systems</strong></td>
+                  <td data-i18n="experience.boostcamp"><strong>NAVER Boostcamp AI Tech, Recommender Systems</strong></td>
                 </tr>
                 <tr>
                   <th>Jun, 2019 – Jan, 2021</th>
-                  <td><strong>Korean Augmentation to the U.S. Army (KATUSA)</strong></td>
+                  <td data-i18n="experience.katusa"><strong>Korean Augmentation to the U.S. Army (KATUSA)</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -257,7 +267,7 @@
     </main>
 
     <footer class="container">
-      <p>© <span id="year">2026</span> Junhyuk Kwon. Built with care and plain HTML/CSS.</p>
+      <p data-i18n="footer">© <span id="year">2026</span> Junhyuk Kwon. Built with care and plain HTML/CSS.</p>
     </footer>
     <script src="assets/js/main.js"></script>
   </body>
