@@ -29,6 +29,6 @@
   "experience.growdle": "<strong>AI 연구 인턴, Growdle</strong>",
   "experience.additional": "기타 경험",
   "experience.boostcamp": "<strong>NAVER Boostcamp AI Tech, Recommender Systems 과정</strong>",
-  "experience.katusa": "<strong>Korean Augmentation to the U.S. Army (KATUSA) 복무</strong>",
+  "experience.katusa": "<strong><a href=\"https://8tharmy.korea.army.mil/site/about/katusa-soldier-program.asp\" target=\"_blank\" rel=\"noopener\">Korean Augmentation to the United States Army (KATUSA)</a> 복무</strong>",
   "footer": "© <span id=\"year\">2026</span> Junhyuk Kwon. HTML/CSS로 제작했습니다."
 }

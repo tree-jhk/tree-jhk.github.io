@@ -172,15 +172,25 @@ class BeyondTests(unittest.TestCase):
                     self.assertTrue((ROOT / asset.removeprefix(BUILDER.SITE)).is_file(), asset)
             self.assertIn(BUILDER.SITE + "assets/pdf/CV.pdf", document.links)
 
-    def test_four_concise_items_and_original_joke(self):
-        entries = re.findall(r'<dd[^>]*>(.*?)</dd>', self.en, re.DOTALL)
-        self.assertEqual(len(entries), 4)
-        self.assertLess(sum(len(text.split()) for text in entries), 100)
-        self.assertTrue(all(len(text.split()) < 32 for text in entries))
+    def test_five_concise_items_and_original_joke(self):
+        entries = [re.sub(r'<[^>]+>', '', text) for text in re.findall(r'<dd[^>]*>(.*?)</dd>', self.en, re.DOTALL)]
+        self.assertEqual(len(entries), 5)
+        self.assertLess(sum(len(text.split()) for text in entries), 135)
+        self.assertTrue(all(len(text.split()) < 40 for text in entries))
         self.assertIn("Turns out I could use some of that training myself.", self.en)
-        for name in ["USD", "QLD", "KATUSA", "U.S. Army"]:
+        for name in ["USD", "QLD", "KATUSA", "United States Army"]:
             self.assertIn(name, self.en)
             self.assertIn(name, self.ko)
+
+    def test_everyday_ai_and_katusa_official_link(self):
+        link = "https://8tharmy.korea.army.mil/site/about/katusa-soldier-program.asp"
+        for source, document in [(self.en, self.en_doc), (self.ko, self.ko_doc)]:
+            self.assertIn("Korean Augmentation to the United States Army", source)
+            self.assertIn(link, document.links)
+        for text in ["waking up", "just before bed", "planning my day", "untangling thoughts", "practicing English", "set the direction", "delegate the legwork"]:
+            self.assertIn(text, self.en)
+        self.assertIn("큰 방향", self.translations["everyday.text"])
+        self.assertIn("매 거래일", self.translations["investing.text"])
 
     def test_main_navigation_links_to_matching_beyond_page(self):
         for path, expected in [("index.html", "beyond/"), ("ko/index.html", "ko/beyond/")]:
